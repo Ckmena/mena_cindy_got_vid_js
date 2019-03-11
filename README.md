@@ -1,2 +1,2 @@
-# GOT Video
-GOT Video App
+# GOT_video
+Update this with a proper readme doc
