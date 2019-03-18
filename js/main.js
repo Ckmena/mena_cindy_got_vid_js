@@ -40,7 +40,9 @@
 		const offset = 600;
 		let currentOffset = this.dataset.offset * offset;
 
-		banner.style.right = currentOffset + "px";
+		TweenMax.to(topBanners, 0.7 { right: currentOffset });
+
+		//banner.style.right = currentOffset + "px";
 	}
 	
 
