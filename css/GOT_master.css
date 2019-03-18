@@ -33,7 +33,7 @@ main {
 	height:360px;
 	background-color:grey;
 	margin:0 auto;
-	/*overflow:hidden;*/
+	overflow:hidden;
 }
 
 #houseImages { position:relative; width:4000px; transition: all .5s; }
@@ -107,6 +107,16 @@ main {
 	text-align: center;
 	display: none;
 
+}
+
+.lightbox-close
+{
+	position: absolute;
+	color: white;
+	font-size: 2rem;
+	right: 12px;
+	top: 12px;
+	
 }
 
 

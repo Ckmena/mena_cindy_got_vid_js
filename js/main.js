@@ -2,8 +2,11 @@
 	console.log('JS linked');
 
 	const sigils = document.querySelectorAll('.sigilContainer'),
-	lightbox = document.querySelector('.lightbox'),
-	video = document.querySelector('video');
+		  lightbox = document.querySelector('.lightbox'),
+		  video = document.querySelector('video'),
+		  lbClose = document.querySelector('.lightbox-close'),
+		  banner = document.getElementById('houseImages');
+
 
 	function openLightbox() {
 		//debugger;
@@ -11,13 +14,14 @@
 
 		//this give us back a lowercase house name -> the second class on all of the shield ie stark , baratheon
 		//flip this to upercase
-		targetHouse = targetHouse.replace(targetHouse.chartAt(0),
-			targetHouse.splice(1));
+		//targetHouse = targetHouse.replace(targetHouse.chartAt(0),
+			//targetHouse.splice(1));
+		let targetVideo = targetHouse.chartAt(0).toUpperCase() + targetHouse.slice(1);
 
 
-		let targetSource = `video/House-${targetHouse}.mp4`;
-
+		video.src = `video/House-${targetVideo}.mp4`;
 		lightbox.classList.add('lightbox-on');
+
 		video.load();
 		video.play();
 	}
@@ -31,13 +35,22 @@
 
 	}
 
+	function animateBanner(){
+		//move the banners to the left so that the current house banner is available
+		const offset = 600;
+		let currentOffset = this.dataset.offset * offset;
+
+		banner.style.right = currentOffset + "px";
+	}
 	
 
-
-
-	sigils.forEach(sigil => sigil.addEventListener('click', openLightbox));
+	//sigils.forEach(sigil => sigil.addEventListener('click', openLightbox));
+	sigils.forEach(sigil => sigil.addEventListener('click', animateBanner));
 
 	video.addEventListener('ended', closeLightbox);
+	lbClose.addEventListener('click', closeLightbox);
+
+	//add video automatic after animation and change the tex in the bottom 
 
 
 })();
