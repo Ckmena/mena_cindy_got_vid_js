@@ -4,10 +4,11 @@
 	const sigils	= document.querySelectorAll('.sigilContainer'),
 	lightbox 		= document.querySelector('.lightbox'),
 	video 			= document.querySelector('video'),
-	closeButton		= document.querySelector('.lightbox-close');	
+	closeButton		= document.querySelector('.lightbox-close'),
+	banners			= document.getElementById('houseImages');	
 
 	function openLightbox() {
-		// debugger;
+		debugger;
 		let targetHouse = this.className.split(" ")[1];
 		//this gives us a class for house name. this makes a 2nd class ont he shields.
 		
@@ -29,7 +30,23 @@
 		video.pause();
 	}
 
-	sigils.forEach(sigil => sigil.addEventListener('click', openLightbox));
+	function animateBanners() {
+		//moving banners to the left (kinda like scrolling)
+		// let divOffset = this.data-offset;
+		// let bannerOffset = (divOffset*600);
+
+		const offset = 600;
+		let currentOffset = this.dataset.offset * offset;
+
+		banners.style.right = currentOffset + 'px';
+
+
+	}
+
+	//sigils.forEach(sigil => sigil.addEventListener('click', openLightbox));
+
+	//animation for banner at top
+	sigils.forEach(sigil => sigil.addEventListener('click', animateBanners));
 
 	video.addEventListener('ended', closeLightbox);
 	closeButton.addEventListener('click', closeLightbox);
