@@ -139,10 +139,10 @@ video {
 {
 	color: #ffffff;
 	margin: 20px auto 0 auto;
-	width: 320px; 
+	width: 720px; 
 	text-align: center;
 	line-height: 1.5;
 	letter-spacing: 1px;
-	font-size: 15px;
+	font-size: 1.5rem;
 	
 }
