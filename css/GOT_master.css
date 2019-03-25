@@ -36,6 +36,8 @@ main {
 	overflow:hidden;
 }
 
+
+
 /*#houseImages { position:relative; width:4000px; transition: all .5s; }*/
 #houseImages img { float:left; }
 
@@ -47,6 +49,8 @@ main {
 	padding:0px 10px;
 	cursor:pointer;
 }
+
+
 
 /* ----- end default styles ----- */
 
@@ -129,4 +133,16 @@ video {
 	width: 80%;
 	margin-top: 10%;
 	border: thin solid #949393;
+}
+
+.house-info
+{
+	color: #ffffff;
+	margin: 20px auto 0 auto;
+	width: 320px; 
+	text-align: center;
+	line-height: 1.5;
+	letter-spacing: 1px;
+	font-size: 15px;
+	
 }
